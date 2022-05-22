@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:tflite/tflite.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -11,8 +10,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool _loading = true;
-  File _image;
-  List _output;
+  late File _image;
+  List _output = [];
   final picker = ImagePicker(); //allows us to pick image from gallery or camera
 
   @override
@@ -41,7 +40,7 @@ class _HomeState extends State<Home> {
       imageStd: 127.5,
     );
     setState(() {
-      _output = output;
+      //_output = output;
       _loading = false;
     });
   }
